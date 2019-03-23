@@ -246,7 +246,7 @@
 <script src="../assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../assets/dist/js/demo.js"></script>
-
+<script src="../assets/bower_components/ckeditor/ckeditor.js"></script>
 
 <script>
   $(document).ready(function(){
@@ -264,15 +264,6 @@
   });
 
 
-   $(document).on("click",".btn-edit",function() {
-    var id = $(this).attr('id');
-
-    $("#form_"+id).show();
-    $("#tampil_"+id).hide();
-    $(this).hide();
-    $("#btn_update_"+id).show();
-      // $(this).hide();
-    });
 
  });
   
@@ -285,6 +276,13 @@
     autoclose: true,
     format: 'dd/mm/yyyy',
   });
+
+
+  $(function () {
+   
+    CKEDITOR.replace('editor1')
+   
+  })
 
 
 </script>

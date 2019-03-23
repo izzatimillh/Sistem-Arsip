@@ -107,7 +107,7 @@
             </a>
           </li>
           <li>
-            <a href="artikal.php">
+            <a href="artikel.php">
               <i class="fa fa-book"></i> <span>Artikel</span>
             </a>
           </li>
