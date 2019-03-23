@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Stock APP | Dashboard</title>
+  <title>Pengurus - Sistem Informasi Manajemen Beasiswa Bidikmisi</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -92,7 +92,7 @@
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
-       
+
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
@@ -101,6 +101,22 @@
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
+          <li>
+            <a href="kategori.php">
+              <i class="fa fa-book"></i> <span>Kategori</span>
+            </a>
+          </li>
+          <li>
+            <a href="artikal.php">
+              <i class="fa fa-book"></i> <span>Artikel</span>
+            </a>
+          </li>
+          <li>
+            <a href="halaman.php">
+              <i class="fa fa-book"></i> <span>Halaman</span>
+            </a>
+          </li>
+
           <li>
             <a href="stock.php">
               <i class="fa fa-book"></i> <span>Data Stock</span>
