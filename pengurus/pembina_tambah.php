@@ -4,8 +4,8 @@
 
   <section class="content-header">
     <h1>
-      Ganti Password
-      <small>Ganti Password</small>
+      Tambah Pembina
+      <small>Data Pembina</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -15,26 +15,29 @@
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-8 connectedSortable">
-
-        <?php 
-        if(isset($_GET['alert'])){
-          if($_GET['alert'] == "sukses"){
-            echo "<div class='alert alert-success'>Password anda berhasil diganti!</div>";
-          }
-        }
-        ?>
-
+      <section class="col-lg-10 connectedSortable">       
         <div class="box box-info">
 
           <div class="box-header">
-            <h3 class="box-title">Ganti Password</h3>
+            <h3 class="box-title">Tambah Pembina</h3>
           </div>
           <div class="box-body">
-            <form action="gantipassword_act.php" method="post">
+            <form action="pembina_act.php" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                <label>Masukkan Password Baru</label>
+                <label>Nama</label>
+                <input type="text" class="form-control" name="nama" required="required">
+              </div>
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" required="required">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
                 <input type="password" class="form-control" name="password" required="required" min="5">
+              </div>
+              <div class="form-group">
+                <label>Foto</label>
+                <input type="file" name="foto">
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-sm btn-primary" value="Simpan">
