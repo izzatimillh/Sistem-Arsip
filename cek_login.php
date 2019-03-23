@@ -5,23 +5,41 @@ include 'koneksi.php';
 // menangkap data yang dikirim dari form
 $username = $_POST['username'];
 $password = md5($_POST['password']);
+$sebagai = $_POST['sebagai'];
 
-// menyeleksi data admin dengan username dan password yang sesuai
-$login = mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
 
-// menghitung jumlah data yang ditemukan
-$cek = mysqli_num_rows($login);
+if($sebagai == "pengurus"){
 
-// print_r(mysqli_fetch_array($login));
-if($cek > 0){
-	session_start();
-	$data = mysqli_fetch_assoc($login);
-	$_SESSION['id'] = $data['id'];
-	$_SESSION['username'] = $data['username'];
-	$_SESSION['nama'] = $data['nama'];
-	$_SESSION['section'] = $data['section'];
-	$_SESSION['login'] = "admin";
-	header("location:admin/");
-}else{
-	header("location:login.php?alert=gagal");
+	$login = mysqli_query($koneksi, "SELECT * FROM pengurus WHERE pengurus_username='$username' AND pengurus_password='$password'");
+	$cek = mysqli_num_rows($login);
+
+	if($cek > 0){
+		session_start();
+		$data = mysqli_fetch_assoc($login);
+		$_SESSION['id'] = $data['pengurus_id'];
+		$_SESSION['nama'] = $data['pengurus_nama'];
+		$_SESSION['username'] = $data['pengurus_username'];
+		$_SESSION['login'] = "pengurus";
+		header("location:pengurus/");
+	}else{
+		header("location:login.php?alert=gagal");
+	}
+
+}else if($sebagai == "pembina"){
+
+	$login = mysqli_query($koneksi, "SELECT * FROM pembina WHERE pembina_username='$username' AND pembina_password='$password'");
+	$cek = mysqli_num_rows($login);
+
+	if($cek > 0){
+		session_start();
+		$data = mysqli_fetch_assoc($login);
+		$_SESSION['id'] = $data['pembina_id'];
+		$_SESSION['nama'] = $data['pembina_nama'];
+		$_SESSION['username'] = $data['pembina_username'];
+		$_SESSION['login'] = "pembina";
+		header("location:pembina/");
+	}else{
+		header("location:login.php?alert=gagal");
+	}
+
 }

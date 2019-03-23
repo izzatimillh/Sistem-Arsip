@@ -35,7 +35,7 @@
   <?php 
   include '../koneksi.php';
   session_start();
-  if($_SESSION['login'] != "admin"){
+  if($_SESSION['login'] != "pembina"){
     header("location:../login.php?alert=belum_login");
   }
   ?>

@@ -48,10 +48,7 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="login.php"><i class="fa fa-lock"></i> &nbsp; ADMIN</a>
-          </li>
-          <li>
-            <a href="superadmin.php"><i class="fa fa-lock"></i> &nbsp; SUPERADMIN</a>
+            <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a>
           </li>
         </ul>
       </div>
