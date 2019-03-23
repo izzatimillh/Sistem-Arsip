@@ -4,8 +4,8 @@
 
   <section class="content-header">
     <h1>
-      Pembina
-      <small>Data Pembina</small>
+      Mahasiswa
+      <small>Data Mahasiswa</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,8 +19,8 @@
         <div class="box box-info">
 
           <div class="box-header">
-            <h3 class="box-title">Pembina</h3>
-            <a href="pembina_tambah.php" class="btn btn-info btn-sm pull-right"> <i class="fa fa-plus">Tambah</i></a>              
+            <h3 class="box-title">Mahasiswa</h3>
+            <a href="mahasiswa_tambah.php" class="btn btn-info btn-sm pull-right"> <i class="fa fa-plus">Tambah</i></a>              
           </div>
           <div class="box-body">
             <div class="table-responsive">
@@ -28,9 +28,8 @@
                 <thead>
                   <tr>
                     <th width="1%">No</th>
-                    <th>Nama</th>
-                    <th>Username</th>
-                    <th width="15%">Foto</th>
+                    <th>NIM</th>
+                    <th>Nama</th>                    
                     <th width="15%">Option</th>
                   </tr>
                 </thead>
@@ -38,19 +37,18 @@
                   <?php 
                   include '../koneksi.php';
                   $no=1;
-                  $admin = mysqli_query($koneksi,"SELECT * FROM pembina");
+                  $admin = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
                   while($a = mysqli_fetch_array($admin)){
                     ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $a['pembina_nama']; ?></td>
-                      <td><?php echo $a['pembina_username']; ?></td>
+                      <td><?php echo $a['mahasiswa_nim']; ?></td>  
+                      <td><?php echo $a['mahasiswa_nama']; ?></td> 
+                     
                       <td>
-                        <img src="../gambar/pembina/<?php echo $a['pembina_foto'] ?>" width="50" height="60">
-                        </td>
-                      <td>                        
-                       <a class="btn btn-warning btn-sm" href="pembina_edit.php?id=<?php echo $a['pembina_id'] ?>"><i class="fa fa-cog"></i> </a>
-                       <a class="btn btn-danger btn-sm" href="pembina_hapus.php?id=<?php echo $a['pembina_id'] ?>"><i class="fa fa-trash"></i></a>
+                      <a class="btn btn-primary btn-sm" href="mahasiswa_detil.php?id=<?php echo $a['mahasiswa_id'] ?>"><i class="fa fa-search"></i> </a>                    
+                       <a class="btn btn-warning btn-sm" href="mahasiswa_edit.php?id=<?php echo $a['mahasiswa_id'] ?>"><i class="fa fa-cog"></i> </a>
+                       <a class="btn btn-danger btn-sm" href="mahasiswa_hapus.php?id=<?php echo $a['mahasiswa_id'] ?>"><i class="fa fa-trash"></i></a>
                      </td>
                      
                    </tr>

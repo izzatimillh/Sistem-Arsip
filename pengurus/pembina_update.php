@@ -19,7 +19,7 @@ if($pwd=="" && $filename==""){
 	if(!in_array($ext,$allowed) ) {
 		header("location:pembina.php?alert=gagal");
 	}else{
-		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/'.$rand.'_'.$filename);
+		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/pembina/'.$rand.'_'.$filename);
 		$x = $rand.'_'.$filename;
 		mysqli_query($koneksi, "update pembina set pembina_nama='$nama', pembina_username='$username', pembina_foto='$x' where pembina_id='$id'");		
 		header("location:pembina.php?alert=berhasil");

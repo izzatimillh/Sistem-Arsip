@@ -123,6 +123,21 @@
             </a>
           </li>
           <li>
+            <a href="pengurus.php">
+              <i class="fa fa-book"></i> <span>Pengurus</span>
+            </a>
+          </li>
+          <li>
+            <a href="pembina.php">
+              <i class="fa fa-book"></i> <span>Pembina</span>
+            </a>
+          </li>
+          <li>
+            <a href="mahasiswa.php">
+              <i class="fa fa-book"></i> <span>Mahasiswa</span>
+            </a>
+          </li>
+          <li>
             <a href="admin.php">
               <i class="fa fa-users"></i> <span>Admin</span>
             </a>

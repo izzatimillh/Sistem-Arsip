@@ -24,7 +24,7 @@
           </div>
           <div class="box-body">
             <div class="table-responsive">
-              <table class="table table-bordered table-striped">
+              <table class="table table-bordered table-striped" id="table-datatable">
                 <thead>
                   <tr>
                     <th width="1%">No</th>
@@ -46,7 +46,7 @@
                       <td><?php echo $d['pengurus_nama']; ?></td>
                       <td><?php echo $d['pengurus_username']; ?></td>
                       <td>
-                        <img src="../gambar/<?php echo $d['pengurus_foto'] ?>" width="50" height="60">
+                        <img src="../gambar/pengurus/<?php echo $d['pengurus_foto'] ?>" width="50" height="60">
                         </td>
                       <td>                        
                         <a class="btn btn-warning btn-sm" href="pengurus_edit.php?id=<?php echo $d['pengurus_id'] ?>"><i class="fa fa-cog"></i> </a>

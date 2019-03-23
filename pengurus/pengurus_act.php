@@ -11,7 +11,7 @@ $ext = pathinfo($filename, PATHINFO_EXTENSION);
 if(!in_array($ext,$allowed) ) {
 	header("location:pengurus.php?alert=gagal");
 }else{
-	move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/'.$rand.'_'.$filename);
+	move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/pengurus/'.$rand.'_'.$filename);
 	$x = $rand.'_'.$filename;
 	mysqli_query($koneksi, "insert into pengurus values (NULL,'$nama','$username','$password','$x')");
 	header("location:pengurus.php");
