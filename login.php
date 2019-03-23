@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Stock APP | Log in</title>
+  <title>Sistem Informasi Manajemen Beasiswa Bidikmisi</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -22,8 +22,11 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="assets/index2.html"><b>Stock</b>APP</a>
+      <a href="assets/index2.html"><b>Bidikmisi</b>APP</a>
     </div>
+    <center>
+      <h3>Sistem Informasi Manajemen Beasiswa Bidikmisi</h3>
+    </center>
 
     <?php 
     if(isset($_GET['alert'])){
@@ -68,6 +71,9 @@
           <!-- /.col -->
         </div>
       </form>
+      <?php 
+
+       ?>
 
     </div>
     <!-- /.login-box-body -->

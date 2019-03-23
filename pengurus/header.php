@@ -49,9 +49,9 @@
       <!-- Logo -->
       <a href="index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>Stock</b> </span>
+        <span class="logo-mini"><b>Bidik Misi</b> </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Stock</b>APP</span>
+        <span class="logo-lg"><b>Bidikmisi</b>App</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -67,12 +67,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="../assets/dist/img/avatar5.png" class="user-image" alt="User Image">
-                <?php 
-                $x = $_SESSION['id'];
-                $ad = mysqli_query($koneksi,"SELECT * FROM admin,section WHERE id='$x' and section=section_id");
-                $aa = mysqli_fetch_assoc($ad);
-                ?>
-                <span class="hidden-xs"><?php echo $_SESSION['nama']; ?> | <?php echo $aa['section_sect_id']; ?> - <?php echo $aa['section_desc']; ?></span>
+                <span class="hidden-xs"><?php echo $_SESSION['nama']; ?> - Pengurus</span>
               </a>
             </li>
             <!-- Control Sidebar Toggle Button -->
