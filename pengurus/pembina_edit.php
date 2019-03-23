@@ -18,7 +18,7 @@ include '../koneksi.php';
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-10 connectedSortable">       
+      <section class="col-lg-10">       
         <div class="box box-info">
 
           <div class="box-header">
