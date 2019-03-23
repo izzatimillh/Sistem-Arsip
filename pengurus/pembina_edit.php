@@ -18,11 +18,12 @@ include '../koneksi.php';
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-10">       
+      <section class="col-lg-12">       
         <div class="box box-info">
 
           <div class="box-header">
             <h3 class="box-title">Edit Data Pembina</h3>
+            <a href="pembina.php" class="btn btn-info btn-sm pull-right"> <i class="fa fa-reply">Kembali</i></a>              
           </div>
           <div class="box-body">
             <form action="pembina_update.php" method="post" enctype="multipart/form-data">

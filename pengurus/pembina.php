@@ -15,7 +15,7 @@
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-10">
+      <section class="col-lg-12">
         <div class="box box-info">
 
           <div class="box-header">

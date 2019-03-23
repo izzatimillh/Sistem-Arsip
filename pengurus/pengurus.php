@@ -15,12 +15,12 @@
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-10">
+      <section class="col-lg-12">
         <div class="box box-info">
 
           <div class="box-header">
             <h3 class="box-title">Pengurus</h3>
-            <a href="pengurus_tambah.php" class="btn btn-info btn-sm pull-right"> <i class="fa fa-plus">Tambah</i></a>              
+            <a href="pengurus_tambah.php" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus">Tambah</i></a>              
           </div>
           <div class="box-body">
             <div class="table-responsive">

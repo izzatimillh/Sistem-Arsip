@@ -15,11 +15,12 @@
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-10">       
+      <section class="col-lg-12">       
         <div class="box box-info">
 
           <div class="box-header">
             <h3 class="box-title">Tambah Pengurus</h3>
+            <a href="pengurus.php" class="btn btn-info btn-sm pull-right"><i class="fa fa-reply">Kembali</i></a> 
           </div>
           <div class="box-body">
             <form action="pengurus_act.php" method="post" enctype="multipart/form-data">
