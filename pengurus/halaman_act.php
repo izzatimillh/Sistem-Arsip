@@ -14,7 +14,7 @@ $file_tmp = $_FILES['sampul']['tmp_name'];
 if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 	$nm = rand().$nama_file;
 	move_uploaded_file($file_tmp, '../gambar/halaman/'.$nm);
-	$query = mysqli_query($koneksi, "INSERT INTO halaman VALUES(NULL, '$judul', '$nm', '$konten',)");
+	$query = mysqli_query($koneksi, "INSERT INTO halaman VALUES(NULL, '$judul', '$nm', '$konten')");
 	header("location:halaman.php");
 }else{
 	header("location:halaman_tambah.php?alert=gagal");

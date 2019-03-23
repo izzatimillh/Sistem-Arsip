@@ -33,280 +33,141 @@
   include 'koneksi.php';
   ?>
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="index.php" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- <span class="logo-mini"><b>A</b>LT</span> -->
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Bidikmisi</b>APP</span>
-    </a>
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar">
+  <nav class="navbar navbar-default bg-danger">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
 
-      <div class="navbar-custom-menu">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li>
-            <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a>
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
           </li>
         </ul>
-      </div>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li> <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-    </nav>
-  </header>
+
+
+  <div class="container">
+    <div class="col-sm-6"><img class="pull-left" src="gambar/frontend/bidikmisi.png"></div>
+    <div class="col-sm-6"><img class="pull-right" src="gambar/frontend/ristekdikti.png"></div>
+  </div>
+
+
+
+
+
 
   <div class="row">
-    <div class="container-fluid">
-
-      <section class="content-header text-center">
-        <h1 class="text-bold">Laporan Stock</h1>
-        <h4>Qty Actual VS Qty Theory</h4>
-      </section>
-
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <div class="col-xs-12">
-            <!-- /.box -->
-            <div class="box">
-
-              <!-- /.box-header -->
-              <div class="box-body">
-
-                <div class="row">
-                  <div class="col-lg-3">
-                   <form method="get" action="">
-                    <label>Tanggal</label>
-                    <div class="input-group date">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <?php 
-                      if(isset($_GET['tanggal'])){
-                        $tgl = $_GET['tanggal'];
-                      }else{
-                        $tgl = date('d/m/Y');
-                      }
-                      ?>
-                      <input type="text" value="<?php echo $tgl; ?>" name="tanggal" autocomplete="off" class="form-control pull-right" id="datepicker2" required="required">
-                    </div>
-                    <label>Section</label>
-                    <div class="form-group">
-                      <select class="form-control" name="section">
-                        <option value="">Semua Section</option>
-                        <?php 
-                        $section = mysqli_query($koneksi,"SELECT * FROM section");
-                        while($s = mysqli_fetch_array($section)){
-                          ?>
-                          <option <?php if(isset($_GET['section'])){ if($_GET['section'] == $s['section_id']){echo "selected='selected'";} } ?> value="<?php echo $s['section_id'] ?>"><?php echo $s['section_desc'] ?></option>
-                          <?php 
-                        }
-                        ?>
-                      </select>
-                    </div>  
-                    <div class="form-group">
-                     <input class="btn btn-primary" type="submit" value="Filter">
-                   </div>
-                 </form>
-               </div>
-
-               <div class="col-lg-4 col-lg-offset-2">
-                <?php 
-                if(isset($_GET['tanggal'])){
-                  $tanggal = $_GET['tanggal'];
-                  $t = explode("/", $tanggal);
-                  $tanggal = $t[2].'-'.$t[1].'-'.$t[0];
-                  $tanggal = date('Y-m-d',strtotime($tanggal));
-                }else{
-                  $tanggal = date('Y-m-d');
-                }
-
-                if(isset($_GET['section'])){
-                  if($_GET['section'] != ""){
-                    $section = $_GET['section'];
-                    $stock = mysqli_query($koneksi,"SELECT SUM(stock_qty_theory) as total_theory, SUM(stock_qty_actual) as total_actual, SUM(stock_qty_variant) as total_variant FROM stock,section WHERE stock_section=section_id AND stock_section='$section' AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                  }else{
-                    $stock = mysqli_query($koneksi,"SELECT SUM(stock_qty_theory) as total_theory, SUM(stock_qty_actual) as total_actual, SUM(stock_qty_variant) as total_variant FROM stock,section WHERE stock_section=section_id AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                  }
-                }else{
-                  $stock = mysqli_query($koneksi,"SELECT SUM(stock_qty_theory) as total_theory, SUM(stock_qty_actual) as total_actual, SUM(stock_qty_variant) as total_variant FROM stock,section WHERE stock_section=section_id AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                }
-                $total = mysqli_fetch_assoc($stock);
-                ?>
-                <table class="table table-bordered">
-                  <tr>
-                    <th width="50%">QTY Theory</th>
-                    <td>
-                      <?php 
-                      if($total['total_theory'] != ""){
-                        echo number_format($total['total_theory']);
-                      }else{
-                        echo "0";
-                      }
-                      ?>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>QTY Actual</th>
-                    <td>
-                      <?php 
-                      if($total['total_actual'] != ""){
-                        echo number_format($total['total_actual']);
-                      }else{
-                        echo "0";
-                      }
-                      ?>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>QTY Variant</th>
-                    <td>
-                      <?php 
-                      if($total['total_variant'] != ""){
-                        echo number_format($total['total_theory'] - $total['total_actual']);
-                      }else{
-                        echo "0";
-                      }
-                      ?>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped" id="exampl">
-                <thead>
-                  <tr>
-                    <th width="1%">No</th>
-                    <th>Item Code</th>
-                    <th>Section</th>
-                    <th>Loc Code</th>
-                    <th>Process Code</th>
-                    <th>Qty Theory</th>
-                    <th>Qty Actual</th>
-                    <th>Qty Variant</th>
-                    <th>Date</th>
-                    <th>Idouhyo No</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                  $no=1;
-
-                  if(isset($_GET['tanggal'])){
-                    $tanggal = $_GET['tanggal'];
-                    $t = explode("/", $tanggal);
-                    $tanggal = $t[2].'-'.$t[1].'-'.$t[0];
-                    $tanggal = date('Y-m-d',strtotime($tanggal));
-                  }else{
-                    $tanggal = date('Y-m-d');
-                  }
-
-                  if(isset($_GET['section'])){
-                    if($_GET['section'] != ""){
-                      $section = $_GET['section'];
-                      $stock = mysqli_query($koneksi,"SELECT * FROM stock,section WHERE stock_section=section_id AND stock_section='$section' AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                    }else{
-                      $stock = mysqli_query($koneksi,"SELECT * FROM stock,section WHERE stock_section=section_id AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                    }
-                  }else{
-                    $stock = mysqli_query($koneksi,"SELECT * FROM stock,section WHERE stock_section=section_id AND DATE(stock_date)='$tanggal' ORDER BY stock_id DESC");
-                  }
-                  while($s = mysqli_fetch_array($stock)){
-                    ?>
-                    <tr>
-                      <td><?php echo $no++; ?></td>
-                      <td><?php echo $s['stock_item_code']; ?></td>
-                      <td><?php echo $s['section_desc']; ?></td>
-                      <td><?php echo $s['stock_loc_code']; ?></td>
-                      <td><?php echo $s['stock_process_code']; ?></td>
-                      <td><?php echo $s['stock_qty_theory']; ?></td>
-                      <td><?php echo $s['stock_qty_actual']; ?></td>
-                      <td>
-                        <?php 
-                        if($s['stock_qty_actual'] == 0){
-                          echo "-";
-                        }else{
-                         $variant = $s['stock_qty_actual'] - $s['stock_qty_theory'];
-                         if($variant != 0){
-                          echo "<b class='text-danger'>".$variant."</b>";
-                        }else{
-                          echo $variant;
-                        }
-                          // echo $s['stock_qty_variant']; 
-                      }
-                      ?>
-                    </td>
-                    <td><?php echo date('d-m-Y',strtotime($s['stock_date'])); ?></td>
-                    <td><?php echo $s['stock_idouhyo_no']; ?></td>
-                  </tr>
-                  <?php 
-                }
-                ?>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-        <!-- /.box-body -->
+    <div class="container">
+      <div class="col-lg-10 col-lg-offset-1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
-      <!-- /.box -->
     </div>
-    <!-- /.col -->
   </div>
-  <!-- /.row -->
-</section>
-
-<footer class="text-center">
-  <strong>Copyright &copy; 2019.</strong> All rights reserved.
-</footer>
-
-</div>
-</div>
 
 
-<!-- jQuery 3 -->
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
 
-<!-- daterangepicker -->
-<script src="assets/bower_components/moment/min/moment.min.js"></script>
-<script src="assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
-<script src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="assets/dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- jQuery 3 -->
+  <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- DataTables -->
+  <script src="assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <!-- SlimScroll -->
+
+  <!-- daterangepicker -->
+  <script src="assets/bower_components/moment/min/moment.min.js"></script>
+  <script src="assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="assets/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="assets/dist/js/demo.js"></script>
+  <!-- page script -->
+  <script>
+    $(function () {
+      $('#example1').DataTable()
+      $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : false,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+      })
     })
-  })
 
-  $('#datepicker2').datepicker({
-    autoclose: true,
-    format: 'dd/mm/yyyy',
-  });
-</script>
+    $('#datepicker2').datepicker({
+      autoclose: true,
+      format: 'dd/mm/yyyy',
+    });
+  </script>
 </body>
 </html>
