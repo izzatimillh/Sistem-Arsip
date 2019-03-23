@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2019 at 09:07 AM
+-- Generation Time: Mar 23, 2019 at 09:29 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.2.15
 
@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_bidikmisi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `absen_kegiatan`
+--
+
+CREATE TABLE `absen_kegiatan` (
+  `absen_id` int(11) NOT NULL,
+  `absen_tanggal` date NOT NULL,
+  `absen_mahasiswa` varchar(255) NOT NULL,
+  `absen_kegiatan` varchar(255) NOT NULL,
+  `absen_keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -56,7 +70,7 @@ CREATE TABLE `artikel` (
   `artikel_tanggal` date NOT NULL,
   `artikel_judul` varchar(255) NOT NULL,
   `artikel_kategori` varchar(255) NOT NULL,
-  `artikel_konten` date NOT NULL,
+  `artikel_konten` text NOT NULL,
   `artikel_sampul` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -147,6 +161,13 @@ CREATE TABLE `pembina` (
   `pembina_foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pembina`
+--
+
+INSERT INTO `pembina` (`pembina_id`, `pembina_nama`, `pembina_username`, `pembina_password`, `pembina_foto`) VALUES
+(1, 'pembina', 'pembina', '9be84ba1f28932cb5019ef122f2ce318', '');
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +180,34 @@ CREATE TABLE `pengurus` (
   `pengurus_username` varchar(255) NOT NULL,
   `pengurus_password` varchar(255) NOT NULL,
   `pengurus_foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan_isi`
+--
+
+CREATE TABLE `pesan_isi` (
+  `pesan_id` int(11) NOT NULL,
+  `pesan_percakapan` varchar(255) NOT NULL,
+  `pesan_tanggal` date NOT NULL,
+  `pesan_dari_tipe` int(11) NOT NULL,
+  `pesan_tujuan_tipe` int(11) NOT NULL,
+  `pesan_dari_id` int(11) NOT NULL,
+  `pesan_tujuan_id` varchar(255) NOT NULL,
+  `pesan_isi` date NOT NULL,
+  `pesan_dokumen` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan_percakapan`
+--
+
+CREATE TABLE `pesan_percakapan` (
+  `percakapan_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -400,6 +449,12 @@ INSERT INTO `superadmin` (`id`, `nama`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `absen_kegiatan`
+--
+ALTER TABLE `absen_kegiatan`
+  ADD PRIMARY KEY (`absen_id`);
+
+--
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
@@ -454,6 +509,18 @@ ALTER TABLE `pengurus`
   ADD PRIMARY KEY (`pengurus_id`);
 
 --
+-- Indexes for table `pesan_isi`
+--
+ALTER TABLE `pesan_isi`
+  ADD PRIMARY KEY (`pesan_id`);
+
+--
+-- Indexes for table `pesan_percakapan`
+--
+ALTER TABLE `pesan_percakapan`
+  ADD PRIMARY KEY (`percakapan_id`);
+
+--
 -- Indexes for table `qa`
 --
 ALTER TABLE `qa`
@@ -480,6 +547,12 @@ ALTER TABLE `superadmin`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `absen_kegiatan`
+--
+ALTER TABLE `absen_kegiatan`
+  MODIFY `absen_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -527,13 +600,25 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
-  MODIFY `pembina_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pembina_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pengurus`
 --
 ALTER TABLE `pengurus`
   MODIFY `pengurus_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pesan_isi`
+--
+ALTER TABLE `pesan_isi`
+  MODIFY `pesan_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pesan_percakapan`
+--
+ALTER TABLE `pesan_percakapan`
+  MODIFY `percakapan_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `qa`
