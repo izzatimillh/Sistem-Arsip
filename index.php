@@ -24,27 +24,27 @@
       <?php 
       $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
       while($k = mysqli_fetch_array($kategori)){
-       ?>
-       <div class="col-md-3">
-        <ul class="list-group">
-          <li class="list-group-item"><b><?php echo $k['kategori_nama']; ?></b></li>
-          <?php 
-          $id_k = $k['kategori_id'];
-          $artikel = mysqli_query($koneksi,"SELECT * FROM artikel WHERE artikel_kategori='$id_k' ORDER BY artikel_id DESC LIMIT 5");
-          while($a=mysqli_fetch_array($artikel)){
-            ?>
-            <li class="list-group-item"><a class="text-black" href="single.php?id=<?php echo $a['artikel_id']; ?>"><?php echo $a['artikel_judul']; ?></a></li>
+        ?>
+        <div class="col-md-3">
+          <ul class="list-group">
+            <li class="list-group-item"><b><?php echo $k['kategori_nama']; ?></b></li>
             <?php 
-          }
-          ?>
-        </ul>
-      </div>
-      <?php 
-    }
-    ?>
+            $id_k = $k['kategori_id'];
+            $artikel = mysqli_query($koneksi,"SELECT * FROM artikel WHERE artikel_kategori='$id_k' ORDER BY artikel_id DESC LIMIT 5");
+            while($a=mysqli_fetch_array($artikel)){
+              ?>
+              <li class="list-group-item"><a class="text-black" href="single.php?id=<?php echo $a['artikel_id']; ?>"><?php echo $a['artikel_judul']; ?></a></li>
+              <?php 
+            }
+            ?>
+          </ul>
+        </div>
+        <?php 
+      }
+      ?>
 
+    </div>
   </div>
-</div>
 </div>
 
 <br/>
@@ -67,17 +67,43 @@
       ?>
       <div class="panel panel-success">
         <div class="panel-heading text-bold">
-         <?php echo $q['qa_pertanyaan']; ?>
-       </div>
-       <div class="panel-body">
-        <?php echo $q['qa_jawaban']; ?>
-       </div>
-     </div>
-     <?php 
-   }
-   ?>
+          <?php echo $q['qa_pertanyaan']; ?>
+        </div>
+        <div class="panel-body">
+          <?php echo $q['qa_jawaban']; ?>
+        </div>
+      </div>
+      <?php 
+    }
+    ?>
 
- </div>
+    <div class="page-header" id="pertanyaan">
+      <h4>Bertanya <small>Bertanya seputer Bidik Misi</small></h4>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+
+        <?php 
+        if(isset($_GET['alert'])){
+          if($_GET['alert'] == "pertanyaan"){
+            echo "<div class='alert alert-success text-center'>Pertanyaan anda telah tersimpan, silahkan menunggu jawaban dari admin dalam fitur Q & A ini.</div>";
+          }
+        }
+        ?>
+
+        <form action="pertanyaan_act.php" method="POST">
+          <div class="form-group">
+            <label>Pertanyaan</label>
+            <textarea class="form-control" name="pertanyaan" required="required"></textarea>
+          </div>
+          <input type="submit" class="btn btn-block btn-warning" value="Kirim Pertanyaan">
+        </form>
+      </div>
+    </div>
+
+
+  </div>
 </div>
 
 

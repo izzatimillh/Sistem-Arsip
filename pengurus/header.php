@@ -101,49 +101,44 @@
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
-          <li>
-            <a href="kategori.php">
-              <i class="fa fa-book"></i> <span>Kategori</span>
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-bullhorn"></i>
+              <span>Data Informasi</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
             </a>
-          </li>
-          <li>
-            <a href="artikel.php">
-              <i class="fa fa-book"></i> <span>Artikel</span>
-            </a>
-          </li>
-          <li>
-            <a href="halaman.php">
-              <i class="fa fa-book"></i> <span>Halaman</span>
-            </a>
+            <ul class="treeview-menu" style="display: none;">
+              <li><a href="kategori.php"><i class="fa fa-circle-o"></i> Kategori</a></li>
+              <li><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel</a></li>
+              <li><a href="halaman.php"><i class="fa fa-circle-o"></i> Halaman</a></li>
+              <li><a href="qa.php"><i class="fa fa-circle-o"></i> Q & A</a></li>
+            </ul>
           </li>
 
-          <li>
-            <a href="stock.php">
-              <i class="fa fa-book"></i> <span>Data Stock</span>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-users"></i>
+              <span>Data Pengguna</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
             </a>
+            <ul class="treeview-menu" style="display: none;">
+              <li><a href="pengurus.php"><i class="fa fa-circle-o"></i> Pengurus</a></li>
+              <li><a href="pembina.php"><i class="fa fa-circle-o"></i> Pembina</a></li>
+              <li><a href="mahasiswa.php"><i class="fa fa-circle-o"></i> Mahasiswa</a></li>
+            </ul>
           </li>
           <li>
-            <a href="pengurus.php">
-              <i class="fa fa-book"></i> <span>Pengurus</span>
-            </a>
-          </li>
-          <li>
-            <a href="pembina.php">
-              <i class="fa fa-book"></i> <span>Pembina</span>
-            </a>
-          </li>
-          <li>
-            <a href="mahasiswa.php">
-              <i class="fa fa-book"></i> <span>Mahasiswa</span>
-            </a>
-          </li>
-          <li>
-           <li>
             <a href="kegiatan.php">
               <i class="fa fa-book"></i> <span>Kegiatan</span>
             </a>
           </li>
           <li>
+<<<<<<< HEAD
            <li>
             <a href="setting_absen.php">
               <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
@@ -155,6 +150,8 @@
             </a>
           </li>
           <li>
+=======
+>>>>>>> eb92f7b1a335ccfe95bbe1ee4a3ce317b75f5f87
             <a href="gantipassword.php">
               <i class="fa fa-lock"></i> <span>Ganti Password</span>
             </a>
@@ -165,45 +162,7 @@
             </a>
           </li>
           
-      <!-- <li class="treeview">
-        <a href="#">
-          <i class="fa fa-files-o"></i>
-          <span>Layout Options</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
-      </li>
-      <li>
-        <a href="pages/widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-        </ul>
-      </li> -->
-    </ul>
-  </section>
-  <!-- /.sidebar -->
-</aside>
+      </section>
+      <!-- /.sidebar -->
+    </aside>

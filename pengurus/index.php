@@ -73,18 +73,18 @@
     <!-- small box -->
     <div class="small-box bg-aqua">
       <div class="inner">
-         <?php 
-         $mahasiswa = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
-         ?>
-        <h3><?php echo mysqli_num_rows($mahasiswa); ?></h3>
-        <p>Mahasiswa</p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-android-list"></i>
-      </div>
-      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+       <?php 
+       $mahasiswa = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
+       ?>
+       <h3><?php echo mysqli_num_rows($mahasiswa); ?></h3>
+       <p>Mahasiswa</p>
+     </div>
+     <div class="icon">
+      <i class="ion ion-android-list"></i>
     </div>
+    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
   </div>
+</div>
 
 </div>
 <!-- /.row -->
@@ -114,24 +114,20 @@
          <tr>
            <th>Hak Akses Level</th>
            <td>
-             <?php 
-             $x = $_SESSION['id'];
-             $ad = mysqli_query($koneksi,"SELECT * FROM admin,section WHERE id='$x' and section=section_id");
-             $aa = mysqli_fetch_assoc($ad);
-             ?>
-             <span class="label label-success">Admin Section</span> <span class="label label-warning"><?php echo $aa['section_sect_id']; ?> - <?php echo $aa['section_desc']; ?></span></td>
-           </tr>
-         </table>
-       </div>
-
-       <br/>
+            <span class="label label-success">Pengurus</span>
+           </td>
+         </tr>
+       </table>
      </div>
 
-   </section>
-   <!-- /.Left col -->
+     <br/>
+   </div>
 
- </div>
- <!-- /.row (main row) -->
+ </section>
+ <!-- /.Left col -->
+
+</div>
+<!-- /.row (main row) -->
 
 </section>
 <!-- /.content -->
