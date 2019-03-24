@@ -69,10 +69,10 @@
                 <img src="../assets/dist/img/avatar5.png" class="user-image" alt="User Image">
                 <?php 
                 $x = $_SESSION['id'];
-                $ad = mysqli_query($koneksi,"SELECT * FROM admin,section WHERE id='$x' and section=section_id");
+                $ad = mysqli_query($koneksi,"SELECT * FROM pembina WHERE pembina_id='$x'");
                 $aa = mysqli_fetch_assoc($ad);
                 ?>
-                <span class="hidden-xs"><?php echo $_SESSION['nama']; ?> | <?php echo $aa['section_sect_id']; ?> - <?php echo $aa['section_desc']; ?></span>
+                <span class="hidden-xs"><?php echo $_SESSION['nama']; ?> | <?php echo $aa['pembina_nama']; ?></span>
               </a>
             </li>
             <!-- Control Sidebar Toggle Button -->
@@ -104,16 +104,6 @@
           <li>
             <a href="index.php">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="stock.php">
-              <i class="fa fa-book"></i> <span>Data Stock</span>
-            </a>
-          </li>
-          <li>
-            <a href="admin.php">
-              <i class="fa fa-users"></i> <span>Admin</span>
             </a>
           </li>
           <li>

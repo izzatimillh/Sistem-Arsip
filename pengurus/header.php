@@ -138,7 +138,6 @@
             </a>
           </li>
           <li>
-<<<<<<< HEAD
            <li>
             <a href="setting_absen.php">
               <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
@@ -150,8 +149,6 @@
             </a>
           </li>
           <li>
-=======
->>>>>>> eb92f7b1a335ccfe95bbe1ee4a3ce317b75f5f87
             <a href="gantipassword.php">
               <i class="fa fa-lock"></i> <span>Ganti Password</span>
             </a>
