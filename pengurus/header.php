@@ -144,6 +144,12 @@
             </a>
           </li>
           <li>
+           <li>
+            <a href="setting_absen.php">
+              <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
+            </a>
+          </li>
+          <li>
             <a href="admin.php">
               <i class="fa fa-users"></i> <span>Admin</span>
             </a>
