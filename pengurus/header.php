@@ -138,6 +138,12 @@
             </a>
           </li>
           <li>
+           <li>
+            <a href="kegiatan.php">
+              <i class="fa fa-book"></i> <span>Kegiatan</span>
+            </a>
+          </li>
+          <li>
             <a href="admin.php">
               <i class="fa fa-users"></i> <span>Admin</span>
             </a>
