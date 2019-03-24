@@ -41,8 +41,8 @@
                       ?>
                       <tr>                        
                         <td>
-                          <input type="text" name="id" value="<?php echo $id; ?>">
-                          <input type="text" name="mahasiswa[]" value="<?php echo $k['mahasiswa_id']; ?>">
+                          <input type="hidden" name="id" value="<?php echo $id; ?>">
+                          <input type="hidden" name="mahasiswa[]" value="<?php echo $k['mahasiswa_id']; ?>">
                           <?php echo "( ".$k['mahasiswa_nim']." ) ". $k['mahasiswa_nama']; ?>
                         </td> 
                         <td>
