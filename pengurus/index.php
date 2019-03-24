@@ -19,23 +19,20 @@
     <!-- Small boxes (Stat box) -->
     <div class="row">
 
-
-
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
             <?php 
-            $section = mysqli_query($koneksi,"SELECT * FROM section");
+            $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
             ?>
-            <h3><?php echo mysqli_num_rows($section); ?></h3>
-
-            <p>Section</p>
+            <h3><?php echo mysqli_num_rows($kategori); ?></h3>
+            <p>Kategori</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="kategori.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -44,16 +41,15 @@
         <div class="small-box bg-yellow">
           <div class="inner">
            <?php 
-           $admin = mysqli_query($koneksi,"SELECT * FROM admin");
+           $artikel = mysqli_query($koneksi,"SELECT * FROM artikel");
            ?>
-           <h3><?php echo mysqli_num_rows($admin); ?></h3>
-
-           <p>Admin Section</p>
+           <h3><?php echo mysqli_num_rows($artikel); ?></h3>
+           <p>Artikel</p>
          </div>
          <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="admin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="artikel.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -62,11 +58,10 @@
       <div class="small-box bg-red">
         <div class="inner">
          <?php 
-         $stock = mysqli_query($koneksi,"SELECT * FROM stock");
+         $pembina = mysqli_query($koneksi,"SELECT * FROM pembina");
          ?>
-         <h3><?php echo mysqli_num_rows($stock); ?></h3>
-
-         <p>Stock Record</p>
+         <h3><?php echo mysqli_num_rows($pembina); ?></h3>
+         <p>Pembina</p>
        </div>
        <div class="icon">
         <i class="ion ion-pie-graph"></i>
@@ -79,14 +74,10 @@
     <div class="small-box bg-aqua">
       <div class="inner">
          <?php 
-         $is = $_SESSION['section'];
-         $sec = mysqli_query($koneksi,"SELECT * FROM section WHERE section_id='$is'");
-         $ss = mysqli_fetch_assoc($sec);
-         $stock = mysqli_query($koneksi,"SELECT * FROM stock WHERE stock_section='$is'");
+         $mahasiswa = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
          ?>
-        <h3><?php echo mysqli_num_rows($stock); ?></h3>
-
-        <p>Stock <b><?php echo $ss['section_desc']; ?></b></p>
+        <h3><?php echo mysqli_num_rows($mahasiswa); ?></h3>
+        <p>Mahasiswa</p>
       </div>
       <div class="icon">
         <i class="ion ion-android-list"></i>

@@ -15,7 +15,7 @@
 
   <section class="content">
     <div class="row">
-      <section class="col-lg-12">
+      <section class="col-lg-8">
 
         <div class="box box-info">
           <div class="box-header">
@@ -75,7 +75,7 @@
                     <td><?php echo $k['kategori_nama']; ?></td>
                     <td>
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#kategori_edit_<?php echo $k['kategori_id']; ?>"><i class="fa fa-wrench"></i></button>
-                      <a class="btn btn-sm btn-danger" href="kategori_hapus.php?id=<?php echo $k['kategori_id']; ?>"><i class="fa fa-trash"></i></a>
+                      <!-- <a class="btn btn-sm btn-danger" href="kategori_hapus.php?id=<?php echo $k['kategori_id']; ?>"><i class="fa fa-trash"></i></a> -->
                       
                       <!-- Modal -->
                       <div id="kategori_edit_<?php echo $k['kategori_id']; ?>" class="modal fade" role="dialog">
