@@ -114,6 +114,7 @@
               <li><a href="kategori.php"><i class="fa fa-circle-o"></i> Kategori</a></li>
               <li><a href="artikel.php"><i class="fa fa-circle-o"></i> Artikel</a></li>
               <li><a href="halaman.php"><i class="fa fa-circle-o"></i> Halaman</a></li>
+              <li><a href="qa.php"><i class="fa fa-circle-o"></i> Q & A</a></li>
             </ul>
           </li>
 
