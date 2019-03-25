@@ -1,6 +1,6 @@
 
 
-<footer style="margin-top: 50px">
+<footer style="margin-top: 300px">
   <center>
     <p>2019 - Sistem Informasi Manajemen Beasiswa Bidikmisi</p>
   </center>

@@ -13,6 +13,7 @@
 </div>
 
 <br/>
+<br/>
 
 <div class="row">
   <div class="container">
@@ -48,12 +49,17 @@
 </div>
 
 <br/>
-<center>
-  <a target="_blank" href="https://bidikmisi.belmawa.ristekdikti.go.id/" class="btn btn-danger">MENDAFTAR BIDIKMISI DI RISTEK DIKTI</a>
-  <a href="#" class="btn btn-primary">MENDAFTAR DI SIMABID</a>
-</center>
+<br/>
 <br/>
 
+
+<center>
+  <a target="_blank" href="https://bidikmisi.belmawa.ristekdikti.go.id/" class="btn btn-danger">MENDAFTAR BIDIKMISI DI RISTEK DIKTI</a>
+  <a href="daftar.php" class="btn btn-primary">MENDAFTAR DI SIMABID</a>
+</center>
+
+<br/>
+<br/>
 
 <div class="row">
   <div class="container">
@@ -76,6 +82,9 @@
       <?php 
     }
     ?>
+
+    <br/>
+    <br/>
 
     <div class="page-header" id="pertanyaan">
       <h4>Bertanya <small>Bertanya seputer Bidik Misi</small></h4>

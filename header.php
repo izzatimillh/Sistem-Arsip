@@ -66,12 +66,6 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -83,9 +77,17 @@
               <li><a href="#">Separated link</a></li>
             </ul>
           </li>
+          <li> <a href="daftar.php"><i class="fa fa-lock"></i> &nbsp; DAFTAR</a></li>
+          <li> <a href="login_mahasiswa.php"><i class="fa fa-lock"></i> &nbsp; LOGIN MAHASISWA</a></li>
           <li> <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </div><!-- /.container-fluid -->
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </nav>
