@@ -1,22 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 23, 2019 at 09:52 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.2.15
+-- Host: localhost:3306
+-- Generation Time: Mar 24, 2019 at 12:30 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `project_bidikmisi`
@@ -51,6 +43,23 @@ CREATE TABLE `artikel` (
   `artikel_sampul` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`artikel_id`, `artikel_tanggal`, `artikel_judul`, `artikel_kategori`, `artikel_konten`, `artikel_sampul`) VALUES
+(3, '2019-03-23', 'x', '3', '<p>ssdf</p>\r\n', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(5, '2019-03-23', 'Porro.', '8', 'Ipsam eos beatae excepturi in quo similique. Consequatur cumque rerum sit ullam. In molestiae porro dolores enim rerum aut. Cum sint praesentium provident et illo consectetur.', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(6, '2019-03-23', 'Eos ducimus.', '2', 'Esse facere amet recusandae voluptatem et cum excepturi. Totam corporis deserunt iusto repellat nihil quasi occaecati. Facilis placeat odit ut et est vel autem.', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(7, '2019-03-23', 'Eos distinctio.', '6', 'Recusandae enim iure est aut officiis corrupti incidunt. Dolor et in ut maxime nobis et tempore. Nulla culpa sunt atque vel et. Consequatur quo eligendi perferendis autem enim molestias.', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(8, '2019-03-23', 'Blanditiis.', '7', 'Voluptatum dolorum quisquam fugit est. Molestiae aliquid non provident omnis iste non a. Aut id rerum odio tempora sunt. Repellat nesciunt corrupti corrupti quo sint.', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(9, '2019-03-23', 'Consequuntur blanditiis.', '2', 'Asperiores et aut et architecto. Voluptas magni veritatis dignissimos consequatur rem sed sunt.', '188575517021-5x8-Stacked-Hardcover-Book-Mockup-COVERVAULT.png'),
+(10, '2019-03-23', 'Nulla enim.', '6', 'Voluptatem non expedita molestiae facere non sit a. Repellat facilis nihil autem. Sed est vitae et repellat repudiandae. Architecto eum iste ullam ad.', '1128105000Screen Shot 2019-03-20 at 2.33.21 PM.png'),
+(11, '2019-03-23', 'Et occaecati.', '5', 'Quia iure ad fugit temporibus dolores eligendi. Accusamus nam quis nihil ratione dignissimos error. Eos magnam et modi placeat aspernatur necessitatibus inventore. Et rem blanditiis fugit atque amet. Vero est dolorem quaerat numquam et ea.', '1128105000Screen Shot 2019-03-20 at 2.33.21 PM.png'),
+(12, '2019-03-23', 'Quisquam numquam.', '3', 'Inventore reiciendis voluptatem fugiat. Fuga aliquid quis sint et. Quia quisquam dolores voluptas consequatur. Non mollitia quo possimus asperiores. Perspiciatis voluptatem ducimus sit delectus deserunt corrupti.', '1128105000Screen Shot 2019-03-20 at 2.33.21 PM.png'),
+(13, '2019-03-23', 'Omnis.', '4', 'Unde non at mollitia. Neque eius odit quidem. Sequi dolorum a aperiam aperiam voluptates dolorem optio. Voluptatem aut in est expedita et fugit atque quibusdam. Aut debitis rerum aut vel et dolorem.', '1128105000Screen Shot 2019-03-20 at 2.33.21 PM.png'),
+(14, '2019-03-23', 'Tempora qui.', '5', 'Unde explicabo ut dolore voluptatem ut sapiente cum. Repellat maxime vel voluptas dolorum totam aut nam. Omnis cupiditate magni ipsum neque qui nemo.', '1128105000Screen Shot 2019-03-20 at 2.33.21 PM.png');
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +73,13 @@ CREATE TABLE `halaman` (
   `halaman_konten` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `halaman`
+--
+
+INSERT INTO `halaman` (`halaman_id`, `halaman_judul`, `halaman_sampul`, `halaman_konten`) VALUES
+(2, 'Recusandae eum', '444103481car.png', 'Dolorem quos quia beatae sit ad earum enim. Id inventore est veniam sit impedit ad cum. Velit eos laboriosam quasi ut explicabo eum aspernatur.(3 = 3, 1 = true)');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +90,16 @@ CREATE TABLE `kategori` (
   `kategori_id` int(11) NOT NULL,
   `kategori_nama` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`kategori_id`, `kategori_nama`) VALUES
+(2, 'Kegiatan'),
+(3, 'Peluang Kerja'),
+(6, 'Beasiswa'),
+(7, 'Bidikmisi');
 
 -- --------------------------------------------------------
 
@@ -145,7 +171,8 @@ CREATE TABLE `pembina` (
 --
 
 INSERT INTO `pembina` (`pembina_id`, `pembina_nama`, `pembina_username`, `pembina_password`, `pembina_foto`) VALUES
-(1, 'pembina', 'pembina', '9be84ba1f28932cb5019ef122f2ce318', '');
+(1, 'pembina', 'pembina', '9be84ba1f28932cb5019ef122f2ce318', ''),
+(2, 'pembin', 'pembina', '9be84ba1f28932cb5019ef122f2ce318', NULL);
 
 -- --------------------------------------------------------
 
@@ -160,6 +187,13 @@ CREATE TABLE `pengurus` (
   `pengurus_password` varchar(255) DEFAULT NULL,
   `pengurus_foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengurus`
+--
+
+INSERT INTO `pengurus` (`pengurus_id`, `pengurus_nama`, `pengurus_username`, `pengurus_password`, `pengurus_foto`) VALUES
+(1, 'Jhoni Ahmad', 'pengurus', '0181a4b54d3adfd637ba1cf16e167e1e', NULL);
 
 -- --------------------------------------------------------
 
@@ -198,9 +232,17 @@ CREATE TABLE `pesan_percakapan` (
 CREATE TABLE `qa` (
   `qa_id` int(11) NOT NULL,
   `qa_pertanyaan` varchar(255) DEFAULT NULL,
-  `qa_jawaban` varchar(255) DEFAULT NULL,
+  `qa_jawaban` text,
   `qa_status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `qa`
+--
+
+INSERT INTO `qa` (`qa_id`, `qa_pertanyaan`, `qa_jawaban`, `qa_status`) VALUES
+(1, 'consectetur adipisicing elit?', 'consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'publish'),
+(2, 'Lorem ipsum dolor sit ame Akuku?', 'cnim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elitonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit a', 'publish');
 
 --
 -- Indexes for dumped tables
@@ -292,19 +334,19 @@ ALTER TABLE `absen_kegiatan`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `artikel_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `artikel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `halaman`
 --
 ALTER TABLE `halaman`
-  MODIFY `halaman_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `halaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kegiatan`
@@ -328,13 +370,13 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `pembina`
 --
 ALTER TABLE `pembina`
-  MODIFY `pembina_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pembina_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengurus`
 --
 ALTER TABLE `pengurus`
-  MODIFY `pengurus_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pengurus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pesan_isi`
@@ -352,9 +394,4 @@ ALTER TABLE `pesan_percakapan`
 -- AUTO_INCREMENT for table `qa`
 --
 ALTER TABLE `qa`
-  MODIFY `qa_id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  MODIFY `qa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

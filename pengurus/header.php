@@ -144,8 +144,8 @@
             </a>
           </li>
           <li>
-            <a href="admin.php">
-              <i class="fa fa-users"></i> <span>Admin</span>
+            <a href="keuangan.php">
+              <i class="fa fa-users"></i> <span>Keuangan</span>
             </a>
           </li>
           <li>
