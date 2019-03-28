@@ -24,7 +24,15 @@
           </div>
           <div class="box-body">
             <div class="table-responsive">
-              <input type='text' id='input' onkeyup='searchTable()'>
+
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <input type="radio">
+                </span>
+                <input class="form-control" type='text' id='input' onkeyup='searchTable()'>
+              </div>                
+
+
               <form action="setting_absen_update.php" method="POST">
                 <table class="table table-bordered table-striped" id="table">
                   <thead>
