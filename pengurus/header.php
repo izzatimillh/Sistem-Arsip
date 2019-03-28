@@ -138,9 +138,13 @@
             </a>
           </li>
           <li>
-           <li>
             <a href="setting_absen.php">
               <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
+            </a>
+          </li>
+           <li>
+            <a href="absensi.php">
+              <i class="fa fa-book"></i> <span>Laporan Absen</span>
             </a>
           </li>
           <li>
