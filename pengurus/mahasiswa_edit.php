@@ -80,11 +80,7 @@ include '../koneksi.php';
                     <option <?php if($d['mahasiswa_agama']=="Kristen"){echo "selected='selected'";} ?> value="Kristen">Kristen</option>
                     <option <?php if($d['mahasiswa_agama']=="Kong Hu Chu"){echo "selected='selected'";} ?> value="Kong Hu Chu">Kong Hu Chu</option>
                   </select>
-                </div>
-                <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" class="form-control" name="username" value="<?php echo $d['mahasiswa_username'] ?>">
-                </div>
+                </div>               
                 <div class="form-group">
                   <label>Password</label>
                   <input type="password" class="form-control" name="password" min="5" placeholder="Kosong Jika tidak ingin di ganti">                  

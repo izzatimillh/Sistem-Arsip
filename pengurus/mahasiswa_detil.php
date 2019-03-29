@@ -88,13 +88,7 @@
                   <div class="col-sm-10">
                     <input type="text" disabled class="form-control" value="<?php echo $d['mahasiswa_agama'] ?>">
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Username</label>
-                  <div class="col-sm-10">
-                    <input type="text" disabled class="form-control" value="<?php echo $d['mahasiswa_username'] ?>">
-                  </div>
-                </div>
+                </div>                
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Foto</label>
                   <div class="col-sm-10">

@@ -49,7 +49,7 @@
                         ?>
                       </td>   
                       <td>
-                       <a class="btn btn-primary btn-sm" href="kegiatan_absen.php?id=<?php echo $k['kegiatan_id'] ?>"><i class="fa fa-search"></i> </a>
+                       <a class="btn btn-primary btn-sm" href="kegiatan_absen.php?id=<?php echo $k['kegiatan_id'] ?>">Laporan </a>
                      </td>                    
 
                    </tr>
