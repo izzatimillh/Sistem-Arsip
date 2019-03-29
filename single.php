@@ -116,7 +116,9 @@
               <?php
             }else{
               ?>
-              <a href="login_mahasiswa.php" class="btn btn-primary btn-block">SILAHKAN LOGIN TERLEBIH DULU UNTUK KOMENTAR</a>
+              <center><h3>SILAHKAN LOGIN TERLEBIH DULU UNTUK KOMENTAR</h3></center>
+              <a href="login_mahasiswa.php" class="btn btn-primary btn-block">LOGIN MAHASISWA</a>
+              <a href="login.php" class="btn btn-danger btn-block">LOGIN PENGURUS</a>
               <?php
             }
             ?>
