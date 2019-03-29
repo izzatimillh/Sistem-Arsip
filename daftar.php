@@ -85,11 +85,6 @@
         </div>
 
         <div class="form-group">
-          <label>Username</label>
-          <input type="text" name="username" class="form-control" placeholder="Masukkan username anda (digunakan untuk login ke sistem) .." required="required">
-        </div>
-
-        <div class="form-group">
           <label>Password</label>
           <input type="text" name="password" class="form-control" placeholder="Masukkan password anda (digunakan untuk login ke sistem) .." required="required">
         </div>

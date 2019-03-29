@@ -14,7 +14,7 @@
      <?php 
      if(isset($_GET['alert'])){
       if($_GET['alert'] == "gagal"){
-        echo "<div class='alert alert-danger'>Login gagal! username dan password salah!</div>";
+        echo "<div class='alert alert-danger'>Login gagal! nim dan password salah!</div>";
       }else if($_GET['alert'] == "logout"){
         echo "<div class='alert alert-success'>Anda telah berhasil logout</div>";
       }else if($_GET['alert'] == "belum_login"){
@@ -29,8 +29,8 @@
       <form action="login_mahasiswa_act.php" method="POST">
 
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="Username" name="username" required="required" autocomplete="off">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="NIM" name="nim" required="required" autocomplete="off">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
 
         <div class="form-group has-feedback">

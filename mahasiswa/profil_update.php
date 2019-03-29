@@ -13,7 +13,6 @@ $no_wa = $_POST['mahasiswa_no_wa'];
 $no_ortu = $_POST['mahasiswa_no_ortu'];
 $agama = $_POST['mahasiswa_agama'];
 $foto = $_FILES['mahasiswa_foto'];
-$username = $_POST['mahasiswa_username'];
 $password = md5($_POST['mahasiswa_password']);
 
 // cek gambar
@@ -30,9 +29,9 @@ if($_FILES['mahasiswa_foto']['name'] != ""){
     move_uploaded_file($file_tmp, '../gambar/mahasiswa/'.$nm);
 
     if($_POST['password'] == ""){
-      mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_foto='$nm', mahasiswa_username='$username' WHERE mahasiswa_id='$id'");
+      mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_foto='$nm', WHERE mahasiswa_id='$id'");
     }else{
-      mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_foto='$nm', mahasiswa_username='$username', mahasiswa_password='$password' WHERE mahasiswa_id='$id'");
+      mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_foto='$nm', mahasiswa_password='$password' WHERE mahasiswa_id='$id'");
     }
     header("location:index.php?alert=update");
   }else{
@@ -42,9 +41,9 @@ if($_FILES['mahasiswa_foto']['name'] != ""){
 }else{
 
   if($_POST['password'] == ""){
-    mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_username='$username' WHERE mahasiswa_id='$id'");
+    mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama' WHERE mahasiswa_id='$id'");
   }else{
-    mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_username='$username', mahasiswa_password='$password' WHERE mahasiswa_id='$id'");
+    mysqli_query($koneksi,"UPDATE mahasiswa SET mahasiswa_nama='$nama', mahasiswa_fakultas='$fakultas', mahasiswa_jurusan='$jurusan', mahasiswa_alamat='$alamat', mahasiswa_alamat_sekarang='$alamat_sekarang', mahasiswa_no_telpon='$no_telpon', mahasiswa_no_wa='$no_wa', mahasiswa_no_ortu='$no_ortu', mahasiswa_agama='$agama', mahasiswa_password='$password' WHERE mahasiswa_id='$id'");
   }
   header("location:index.php?alert=update");
 
