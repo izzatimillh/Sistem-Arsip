@@ -152,6 +152,11 @@
               <i class="fa fa-users"></i> <span>Keuangan</span>
             </a>
           </li>
+           <li>
+            <a href="proposal.php">
+              <i class="fa fa-users"></i> <span>Proposal</span>
+            </a>
+          </li>
           <li>
             <a href="gantipassword.php">
               <i class="fa fa-lock"></i> <span>Ganti Password</span>
