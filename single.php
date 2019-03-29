@@ -38,11 +38,94 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-12">
+            <h3>KOMENTAR</h3>
+
+            <div class="panel">
+              <div class="panel-body">
+                <?php 
+                $id_artikel = $a['artikel_id'];
+                $komentar = mysqli_query($koneksi,"SELECT * FROM komentar WHERE komentar_artikel='$id_artikel' ORDER BY komentar_id ASC");
+                while($k = mysqli_fetch_array($komentar)){
+                  ?>
+                  <div class="media">
+                    <?php 
+                    $jenis = $k['komentar_jenis_pengguna'];
+                    $id = $k['komentar_id_pengguna'];
+                    if($jenis == "mahasiswa"){
+                      $user = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$id'");
+                      $u = mysqli_fetch_assoc($user);
+                      ?>
+                      <?php 
+                      if($u['mahasiswa_foto']!="" && file_exists("gambar/mahasiswa/".$u['mahasiswa_foto'])){ 
+                        ?>
+                        <img style="width: 45px" src="gambar/mahasiswa/<?php echo $u['mahasiswa_foto']; ?>" class="mr-3">
+                      <?php }else{ ?>
+                        <img style="width: 45px" src="assets/dist/img/avatar5.png" class="mr-3">
+                      <?php } 
+                      ?>
+                      <div class="media-body">
+                        <h5 class="mt-0 text-bold"><?php echo $u['mahasiswa_nama'] ?> - <span class="label label-warning"><?php echo $jenis; ?></span></h5>
+                        <?php echo $k['komentar_isi']; ?>
+                      </div>
+                      <?php
+                    }elseif($jenis == "pengurus"){
+                      $user = mysqli_query($koneksi,"SELECT * FROM pengurus WHERE pengurus_id='$id'");
+                      $u = mysqli_fetch_assoc($user);
+                      ?>
+                      <?php 
+                      if($u['pengurus_foto']!="" && file_exists("gambar/pengurus/".$u['pengurus_foto'])){ 
+                        ?>
+                        <img style="width: 45px" src="gambar/pengurus/<?php echo $u['pengurus_foto']; ?>" class="mr-3">
+                      <?php }else{ ?>
+                        <img style="width: 45px" src="assets/dist/img/avatar5.png" class="mr-3">
+                      <?php } 
+                      ?>
+                      <div class="media-body">
+                        <h5 class="mt-0 text-bold"><?php echo $u['pengurus_nama'] ?> - <span class="label label-danger"><?php echo $jenis; ?></span></h5>
+                        <?php echo $k['komentar_isi']; ?>
+                      </div>
+                      <?php
+                    }
+                    ?>
+                    
+                  </div>
+                  <hr>
+                  <?php 
+                }
+                ?>
+              </div>
+            </div>
+
+            <?php 
+            if(isset($_SESSION['login'])){
+              ?>
+              <div class="panel" id="komentar">
+                <div class="panel-body">
+                  <form action="komentar.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $a['artikel_id']; ?>">
+                    <div class="form-group">
+                      <label>Komentar</label>
+                      <textarea name="komentar" class="form-control" style="resize: none;height: 150px" required="required"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Komentar">
+                  </form>
+                </div>
+              </div>
+              <?php
+            }else{
+              ?>
+              <a href="login_mahasiswa.php" class="btn btn-primary btn-block">SILAHKAN LOGIN TERLEBIH DULU UNTUK KOMENTAR</a>
+              <?php
+            }
+            ?>
+          </div>
           <?php 
         }
         ?>
-
       </div>
+
     </div>
     <div class="col-lg-3">
       <div class="row">

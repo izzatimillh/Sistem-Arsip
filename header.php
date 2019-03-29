@@ -67,27 +67,94 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
+          <?php 
+          if(isset($_SESSION['login'])){
+            if($_SESSION['login'] == "mahasiswa"){
+              ?>
+              <li class="user user-menu">
+                <a href="mahasiswa/index.php">
+                 <?php 
+                 $id_mhs = $_SESSION['id'];
+                 $a=mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$id_mhs'");
+                 $aa = mysqli_fetch_assoc($a);
+                 if($aa['mahasiswa_foto']!="" && file_exists("gambar/mahasiswa/".$aa['mahasiswa_foto'])){ 
+                  ?>
+                  <img src="gambar/mahasiswa/<?php echo $aa['mahasiswa_foto']; ?>" class="user-image">
+                <?php }else{ ?>
+                  <img src="assets/dist/img/avatar5.png" class="user-image">
+                <?php } ?>
+                <?php 
+                $x = $_SESSION['id'];
+                $ad = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$x'");
+                $aa = mysqli_fetch_assoc($ad);
+                ?>
+                <span class="hidden-xs">NAMA : <?php echo $aa['mahasiswa_nama']; ?> | NIM : <?php echo $aa['mahasiswa_nim']; ?></span>
+              </a>
+            </li>
+            <?php
+          }elseif($_SESSION['login'] == "pembina"){
+            ?>
+            <li class="user user-menu">
+              <a href="pembina/index.php">
+               <?php 
+               $id_mhs = $_SESSION['id'];
+               $a=mysqli_query($koneksi,"SELECT * FROM pembina WHERE pembina_id='$id_mhs'");
+               $aa = mysqli_fetch_assoc($a);
+               if($aa['pembina_foto']!="" && file_exists("gambar/pembina/".$aa['pembina_foto'])){ 
+                ?>
+                <img src="gambar/pembina/<?php echo $aa['pembina_foto']; ?>" class="user-image">
+              <?php }else{ ?>
+                <img src="assets/dist/img/avatar5.png" class="user-image">
+              <?php } ?>
+              <?php 
+              $x = $_SESSION['id'];
+              $ad = mysqli_query($koneksi,"SELECT * FROM pembina WHERE pembina_id='$x'");
+              $aa = mysqli_fetch_assoc($ad);
+              ?>
+              <span class="hidden-xs">NAMA : <?php echo $aa['pengurus_nama']; ?> | PEMBINA</span>
+            </a>
           </li>
-          <li> <a href="daftar.php"><i class="fa fa-lock"></i> &nbsp; DAFTAR</a></li>
-          <li> <a href="login_mahasiswa.php"><i class="fa fa-lock"></i> &nbsp; LOGIN MAHASISWA</a></li>
-          <li> <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a></li>
-        </ul>
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
+            <?php
+          }elseif($_SESSION['login'] == "pengurus"){
+            ?>
+            <li class="user user-menu">
+              <a href="pengurus/index.php">
+               <?php 
+               $id_mhs = $_SESSION['id'];
+               $a=mysqli_query($koneksi,"SELECT * FROM pengurus WHERE pengurus_id='$id_mhs'");
+               $aa = mysqli_fetch_assoc($a);
+               if($aa['pengurus_foto']!="" && file_exists("gambar/pengurus/".$aa['pengurus_foto'])){ 
+                ?>
+                <img src="gambar/pengurus/<?php echo $aa['pengurus_foto']; ?>" class="user-image">
+              <?php }else{ ?>
+                <img src="assets/dist/img/avatar5.png" class="user-image">
+              <?php } ?>
+              <?php 
+              $x = $_SESSION['id'];
+              $ad = mysqli_query($koneksi,"SELECT * FROM pengurus WHERE pengurus_id='$x'");
+              $aa = mysqli_fetch_assoc($ad);
+              ?>
+              <span class="hidden-xs">NAMA : <?php echo $aa['pengurus_nama']; ?> | PENGURUS</span>
+            </a>
+          </li>
+          <?php
+        }
+      }else{
+        ?>
+        <li> <a href="daftar.php"><i class="fa fa-lock"></i> &nbsp; DAFTAR</a></li>
+        <li> <a href="login_mahasiswa.php"><i class="fa fa-lock"></i> &nbsp; LOGIN MAHASISWA</a></li>
+        <li> <a href="login.php"><i class="fa fa-lock"></i> &nbsp; LOGIN</a></li>
+        <?php
+      }
+      ?>
+    </ul>
+      <!-- <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
     </div>
   </div>
+</div>
 </nav>

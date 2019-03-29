@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +51,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>Bidik Misi</b> </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Bidik Misi</b>APP</span>
+        <span class="logo-lg"><b>BidikMisi</b>APP</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -62,70 +62,74 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-
-            <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="../assets/dist/img/avatar5.png" class="user-image" alt="User Image">
-                <?php 
-                $x = $_SESSION['id'];
-                $ad = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$x'");
-                $aa = mysqli_fetch_assoc($ad);
-                ?>
-                <span class="hidden-xs">NAMA : <?php echo $aa['mahasiswa_nama']; ?> | NIM : <?php echo $aa['mahasiswa_nim']; ?></span>
-              </a>
-            </li>
-            <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a>
-            </li>
-          </ul>
+              <?php 
+              $x = $_SESSION['id'];
+              $ad = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$x'");
+              $aa = mysqli_fetch_assoc($ad);
+              ?>
+               <?php if($aa['mahasiswa_foto']!="" && file_exists("../gambar/mahasiswa/".$aa['mahasiswa_foto'])){ ?>
+                <img src="../gambar/mahasiswa/<?php echo $aa['mahasiswa_foto']; ?>" class="user-image">
+              <?php }else{ ?>
+                <img src="../assets/dist/img/avatar5.png" class="user-image">
+              <?php } ?>
+              <span class="hidden-xs">NAMA : <?php echo $aa['mahasiswa_nama']; ?> | NIM : <?php echo $aa['mahasiswa_nim']; ?></span>
+            </a>
+          </li>
+          <li class="dropdown user user-menu active">
+            <a href="../index.php">HALAMAN UTAMA</a>
+          </li>
+          <li>
+            <a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <?php if($aa['mahasiswa_foto']!="" && file_exists("../gambar/mahasiswa/".$aa['mahasiswa_foto'])){ ?>
+            <img style="height: 45px" src="../gambar/mahasiswa/<?php echo $aa['mahasiswa_foto']; ?>" class="img-circle">
+          <?php }else{ ?>
+            <img src="../assets/dist/img/avatar5.png" class="img-circle">
+          <?php } ?>
         </div>
-      </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-          <div class="pull-left image">
-            <?php if($aa['mahasiswa_foto']!="" && file_exists("../gambar/mahasiswa/".$aa['mahasiswa_foto'])){ ?>
-              <img style="height: 45px" src="../gambar/mahasiswa/<?php echo $aa['mahasiswa_foto']; ?>" class="img-circle">
-            <?php }else{ ?>
-              <img src="../assets/dist/img/avatar5.png" class="img-circle">
-            <?php } ?>
-          </div>
-          <div class="pull-left info">
-            <p><?php echo $_SESSION['nama']; ?></p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-          </div>
+        <div class="pull-left info">
+          <p><?php echo $_SESSION['nama']; ?></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
+      </div>
 
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">MAIN NAVIGATION</li>
-          <li>
-            <a href="index.php">
-              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="qa.php">
-              <i class="fa fa-question"></i> <span>Q & A</span>
-            </a>
-          </li>
-          <li>
-            <a href="gantipassword.php">
-              <i class="fa fa-lock"></i> <span>Ganti Password</span>
-            </a>
-          </li>
-          <li>
-            <a href="logout.php">
-              <i class="fa fa-sign-out"></i> <span>Logout</span>
-            </a>
-          </li>
-          
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <a href="index.php">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="qa.php">
+            <i class="fa fa-question"></i> <span>Q & A</span>
+          </a>
+        </li>
+        <li>
+          <a href="gantipassword.php">
+            <i class="fa fa-lock"></i> <span>Ganti Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="logout.php">
+            <i class="fa fa-sign-out"></i> <span>Logout</span>
+          </a>
+        </li>
+
       <!-- <li class="treeview">
         <a href="#">
           <i class="fa fa-files-o"></i>
