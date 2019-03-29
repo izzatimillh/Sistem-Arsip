@@ -107,6 +107,11 @@
             </a>
           </li>
           <li>
+            <a href="proposal.php">
+              <i class="fa fa-lock"></i> <span>Proposal</span>
+            </a>
+          </li>
+          <li>
             <a href="gantipassword.php">
               <i class="fa fa-lock"></i> <span>Ganti Password</span>
             </a>
