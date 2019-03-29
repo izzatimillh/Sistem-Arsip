@@ -16,15 +16,7 @@
   <section class="content">
     <div class="row">
       <section class="col-lg-12">
-        <?php 
-        if(isset($_GET['pesan'])){
-          if($_GET['pesan'] == "gagal"){
-            echo "<div class='alert alert-danger'>Mahasiswa Sudah Diberikan peringatan</div>";
-          }
-        }
-        ?>
         <div class="box box-info">
-         
 
           <div class="box-header">
             <h3 class="box-title">Laporan Absensi Kegiatan</h3>                    
@@ -51,7 +43,7 @@
                     ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $a['mahasiswa_nama']; ?></td>
+                      <td><?php echo "( ".$a['mahasiswa_nim']." ) ".$a['mahasiswa_nama']; ?></td>
 
                       <td>
                         <?php 
@@ -69,20 +61,9 @@
                         }
                         ?>
                       </td>
-                      <td>                                       
-                        <?php 
-                        $absen = mysqli_query($koneksi, "select * from absen_kegiatan where absen_mahasiswa='$id' and absen_keterangan='alpa'");
-                        if(mysqli_num_rows($absen)>2){                          
-                          ?>
-                          <a class="btn btn-primary btn-sm" href="absensi_detil.php?id=<?php echo $id ?>"><i class="fa fa-search"> Detail</i></a>
-                          <a class="btn btn-danger btn-sm" href="absensi_peringatan.php?id=<?php echo $id ?>"><i class="fa fa-search"> SP</i></a>
-                          <?php
-                        }else{
-                          ?>
-                          <a class="btn btn-primary btn-sm" href="absensi_detil.php?id=<?php echo $id ?>"><i class="fa fa-search"> Detail</i></a>
-                          <?php          
-                        }
-                        ?> 
+                      <td> 
+                        
+                         <a class="btn btn-primary btn-sm" href="absensi_detil.php?id=<?php echo $id ?>"><i class="fa fa-search"> Detail</i></a>                                                            
                       </td>
 
                     </tr>

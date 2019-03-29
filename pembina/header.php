@@ -97,7 +97,7 @@
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
-       
+
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
@@ -107,8 +107,28 @@
             </a>
           </li>
           <li>
+            <a href="keuangan.php">
+              <i class="fa fa-lock"></i> <span>Keuangan</span>
+            </a>
+          </li>
+          <li>
             <a href="proposal.php">
               <i class="fa fa-lock"></i> <span>Proposal</span>
+            </a>
+          </li>
+          <li>
+            <a href="kegiatan.php">
+              <i class="fa fa-lock"></i> <span>Kegiatan</span>
+            </a>
+          </li>
+          <li>
+            <a href="laporan_absensi.php">
+              <i class="fa fa-lock"></i> <span>Laporan Absensi</span>
+            </a>
+          </li>
+          <li>
+            <a href="laporan_peringatan.php">
+              <i class="fa fa-lock"></i> <span>Laporan Peringatan</span>
             </a>
           </li>
           <li>
