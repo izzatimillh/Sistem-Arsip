@@ -86,10 +86,6 @@
              <th>Agama</th>
              <td><?php echo $aa['mahasiswa_agama']; ?></td>
            </tr>
-           <tr>
-             <th>Username</th>
-             <td><?php echo $aa['mahasiswa_username']; ?></td>
-           </tr>
          </table>
 
          <a href="profil_edit.php" class="btn btn-primary pull-right">Edit Profil</a>

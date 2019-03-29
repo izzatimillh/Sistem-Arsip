@@ -107,10 +107,6 @@
                   </td>
                 </tr>
                 <tr>
-                  <th>Username</th>
-                  <td><input type="text" name="mahasiswa_username" class="form-control" required="required" value="<?php echo $aa['mahasiswa_username']; ?>"></td>
-                </tr>
-                <tr>
                   <th>Password</th>
                   <td>
                     <input type="password" name="mahasiswa_password" class="form-control" placeholder="Password ..">
