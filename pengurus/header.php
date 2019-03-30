@@ -136,32 +136,32 @@
           </li>
           <li>
             <a href="kegiatan.php">
-              <i class="fa fa-book"></i> <span>Kegiatan</span>
+              <i class="fa fa-sitemap"></i> <span>Kegiatan</span>
             </a>
           </li>
           <li>
             <a href="setting_absen.php">
-              <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
+              <i class="fa fa-cogs"></i> <span>Setting Absen Kegiatan</span>
             </a>
           </li>
           <li>
             <a href="absensi.php">
-              <i class="fa fa-book"></i> <span>Laporan Absen</span>
+              <i class="fa fa-check-square"></i> <span>Laporan Absen</span>
             </a>
           </li>
           <li>
             <a href="peringatan.php">
-              <i class="fa fa-book"></i> <span>Laporan Peringatan</span>
+              <i class="fa fa-warning"></i> <span>Laporan Peringatan</span>
             </a>
           </li>
           <li>
             <a href="keuangan.php">
-              <i class="fa fa-users"></i> <span>Keuangan</span>
+              <i class="fa fa-money"></i> <span>Keuangan</span>
             </a>
           </li>
           <li>
             <a href="proposal.php">
-              <i class="fa fa-users"></i> <span>Proposal</span>
+              <i class="fa fa-book"></i> <span>Proposal</span>
             </a>
           </li>
           <li>
