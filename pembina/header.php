@@ -97,11 +97,7 @@
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 123defe99a4e817aa33f57908bde2a2e138d8f11
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
@@ -111,33 +107,30 @@
             </a>
           </li>
           <li>
-<<<<<<< HEAD
             <a href="pesan.php">
               <i class="fa fa-envelope"></i> <span>Pesan</span>
-=======
             <a href="keuangan.php">
-              <i class="fa fa-lock"></i> <span>Keuangan</span>
+              <i class="fa fa-money"></i> <span>Keuangan</span>
             </a>
           </li>
           <li>
             <a href="proposal.php">
-              <i class="fa fa-lock"></i> <span>Proposal</span>
+              <i class="fa fa-book"></i> <span>Proposal</span>
             </a>
           </li>
           <li>
             <a href="kegiatan.php">
-              <i class="fa fa-lock"></i> <span>Kegiatan</span>
+              <i class="fa fa-sitemap"></i> <span>Kegiatan</span>
             </a>
           </li>
           <li>
             <a href="laporan_absensi.php">
-              <i class="fa fa-lock"></i> <span>Laporan Absensi</span>
+              <i class="fa fa-check-square"></i> <span>Laporan Absensi</span>
             </a>
           </li>
           <li>
             <a href="laporan_peringatan.php">
-              <i class="fa fa-lock"></i> <span>Laporan Peringatan</span>
->>>>>>> 123defe99a4e817aa33f57908bde2a2e138d8f11
+              <i class="fa fa-warning"></i> <span>Laporan Peringatan</span>
             </a>
           </li>
           <li>
