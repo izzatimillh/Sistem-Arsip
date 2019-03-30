@@ -109,6 +109,9 @@
           <li>
             <a href="pesan.php">
               <i class="fa fa-envelope"></i> <span>Pesan</span>
+            </a>
+          </li>
+          <li>
             <a href="keuangan.php">
               <i class="fa fa-money"></i> <span>Keuangan</span>
             </a>
@@ -143,7 +146,7 @@
               <i class="fa fa-sign-out"></i> <span>Logout</span>
             </a>
           </li>
-          
+
       <!-- <li class="treeview">
         <a href="#">
           <i class="fa fa-files-o"></i>
