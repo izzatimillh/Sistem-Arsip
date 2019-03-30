@@ -42,7 +42,7 @@
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Admin</p>
+      <p class="login-box-msg">LOGIN PENGURUS / PEMBINA</p>
 
       <form action="cek_login.php" method="POST">
         <div class="form-group has-feedback">
