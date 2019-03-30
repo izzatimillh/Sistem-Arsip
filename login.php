@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="assets/index2.html"><b>Bidikmisi</b>APP</a>
+      <a href="index.php"><b>Bidikmisi</b>APP</a>
     </div>
     <center>
       <h3>Sistem Informasi Manajemen Beasiswa Bidikmisi</h3>
