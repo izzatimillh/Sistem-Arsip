@@ -63,7 +63,7 @@
                     <th>Isi Pesan</th>
                     <th width="1%">Dokumen</th>
                     <th width="15%">Tujuan</th>
-                    <th width="11%">Opsi</th>
+                    <th width="15%">Opsi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -216,6 +216,77 @@
                             </div>
                           </div>
                         </div>
+
+
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_balas_pesan<?php echo $t['pesan_id']; ?>">
+                          Balas
+                        </button>
+
+                        <div class="modal fade" id="modal_balas_pesan<?php echo $t['pesan_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Balas Pesan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+
+                               <form action="pesan_act.php" method="POST" enctype="multipart/form-data">
+                                <table class="table table-bordered">
+                                  <tr>
+                                    <th>Tujuan</th>
+                                    <td>
+                                      <?php 
+                                      $pengirim = $t['pesan_id_pengirim'];
+                                      $jenis_pengirim = $t['pesan_jenis_pengirim'];
+                                      if($jenis_pengirim == "mahasiswa"){
+                                        $a = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_id='$pengirim'");
+                                        $aa = mysqli_fetch_assoc($a);
+                                        echo $aa['mahasiswa_nama'] . " <span class='label label-danger'>Mahasiswa</span>";
+                                      }elseif($jenis_pengirim=="pengurus"){
+                                        $a = mysqli_query($koneksi,"SELECT * FROM pengurus WHERE pengurus_id='$pengirim'");
+                                        $aa = mysqli_fetch_assoc($a);
+                                        echo $aa['pengurus_nama'] . " <span class='label label-primary'>Pengurus</span>";
+                                      }elseif($jenis_pengirim=="pembina"){
+                                        $a = mysqli_query($koneksi,"SELECT * FROM pembina WHERE pembina_id='$pengirim'");
+                                        $aa = mysqli_fetch_assoc($a);
+                                        echo $aa['pembina_nama'] . " <span class='label label-warning'>Pembina</span>";
+                                      }
+                                      ?>
+                                      <input type="hidden" name="jenis_tujuan" value="<?php echo $t['pesan_jenis_pengirim'] ?>">
+                                      <input type="hidden" name="id_tujuan" value="<?php echo $t['pesan_id_pengirim'] ?>">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Pesan</th>
+                                    <td>
+                                     <textarea class="form-control" style="resize: none;height: 150px;width: 100%" name="pesan" required="required"></textarea>
+                                   </td>
+                                 </tr>
+                                 <tr>
+                                  <th>Upload File (Opsional)</th>
+                                  <td>
+                                   <input type="file" name="file">
+                                 </td>
+                               </tr>
+                               <tr>
+                                <th></th>
+                                <td>
+                                 <input type="submit" value="Balas Pesan" class="btn btn-primary pull-right">
+                               </td>
+                             </tr>
+                           </table>
+                         </form>
+
+                       </div>
+                       <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                       </td>
                     </tr>
                     <?php 
