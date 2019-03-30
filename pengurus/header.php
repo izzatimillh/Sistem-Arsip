@@ -150,6 +150,11 @@
             </a>
           </li>
           <li>
+            <a href="peringatan.php">
+              <i class="fa fa-book"></i> <span>Laporan Peringatan</span>
+            </a>
+          </li>
+          <li>
             <a href="keuangan.php">
               <i class="fa fa-users"></i> <span>Keuangan</span>
             </a>
