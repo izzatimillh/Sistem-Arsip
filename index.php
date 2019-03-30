@@ -84,7 +84,6 @@
     ?>
 
     <br/>
-    <br/>
 
     <div class="page-header" id="pertanyaan">
       <h4>Bertanya <small>Bertanya seputer Bidik Misi</small></h4>
@@ -114,14 +113,5 @@
 
   </div>
 </div>
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-
 
 <?php include 'footer.php'; ?>
