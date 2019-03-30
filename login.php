@@ -19,26 +19,27 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition bg-primary">
   <div class="login-box">
-    <div class="login-logo">
-      <a href="index.php"><b>Bidikmisi</b>APP</a>
-    </div>
-    <center>
-      <h3>Sistem Informasi Manajemen Beasiswa Bidikmisi</h3>
-    </center>
 
-    <?php 
-    if(isset($_GET['alert'])){
-      if($_GET['alert'] == "gagal"){
-        echo "<div class='alert alert-danger'>Login gagal! username dan password salah!</div>";
-      }else if($_GET['alert'] == "logout"){
-        echo "<div class='alert alert-success'>Anda telah berhasil logout</div>";
-      }else if($_GET['alert'] == "belum_login"){
-        echo "<div class='alert alert-warning'>Anda harus login untuk mengakses halaman admin</div>";
+    <center>
+      <h2>SISTEM INFORMASI</h2>
+      <h3>MANAJEMEN BEASISWA BIDIKMISI</h3>
+      <h4>Universitas Sebelas Maret, Solo</h4>
+      <br/>
+      <?php 
+      if(isset($_GET['alert'])){
+        if($_GET['alert'] == "gagal"){
+          echo "<div class='alert alert-danger'>Login gagal! username dan password salah!</div>";
+        }else if($_GET['alert'] == "logout"){
+          echo "<div class='alert alert-success'>Anda telah berhasil logout</div>";
+        }else if($_GET['alert'] == "belum_login"){
+          echo "<div class='alert alert-warning'>Anda harus login untuk mengakses halaman admin</div>";
+        }
       }
-    }
-    ?>
+      ?>
+
+    </center>
 
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -73,7 +74,7 @@
       </form>
       <?php 
 
-       ?>
+      ?>
 
     </div>
     <!-- /.login-box-body -->
