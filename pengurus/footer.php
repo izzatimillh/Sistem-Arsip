@@ -12,8 +12,6 @@
 </div>
 <!-- ./wrapper -->
 
-
-
 <!-- jQuery 3 -->
 <script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -88,10 +86,30 @@
 
 
   $(function () {
-   
+
     CKEDITOR.replace('editor1')
     
-  })
+  });
+
+
+  $(document).ready(function(){
+    $("#pesan_pilih_tujuan").on("change",function(){
+      var pilih = $(this).val();
+      var data = "tujuan="+pilih;
+      if(pilih.length > 0){
+        $.ajax({
+          url: "pesan_ajax_pilih_tujuan.php",
+          method: "POST", 
+          data:data,
+          success: function(result){
+            $(".tampil_tujuan").html(result);
+          }});
+      }
+
+    });
+  });
+
+
 
 
 </script>

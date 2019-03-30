@@ -120,6 +120,11 @@
           </a>
         </li>
         <li>
+          <a href="pesan.php">
+            <i class="fa fa-envelope"></i> <span>Pesan</span>
+          </a>
+        </li>
+        <li>
           <a href="gantipassword.php">
             <i class="fa fa-lock"></i> <span>Ganti Password</span>
           </a>

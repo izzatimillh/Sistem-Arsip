@@ -144,7 +144,7 @@
               <i class="fa fa-book"></i> <span>Setting Absen Kegiatan</span>
             </a>
           </li>
-           <li>
+          <li>
             <a href="absensi.php">
               <i class="fa fa-book"></i> <span>Laporan Absen</span>
             </a>
@@ -154,9 +154,14 @@
               <i class="fa fa-users"></i> <span>Keuangan</span>
             </a>
           </li>
-           <li>
+          <li>
             <a href="proposal.php">
               <i class="fa fa-users"></i> <span>Proposal</span>
+            </a>
+          </li>
+          <li>
+            <a href="pesan.php">
+              <i class="fa fa-envelope"></i> <span>Pesan</span>
             </a>
           </li>
           <li>

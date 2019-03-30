@@ -20,7 +20,7 @@ $password = md5($_POST['password']);
 $cek_nim = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_nim='$nim'");
 if(mysqli_num_rows($cek_nim) > 0){
 
-  $cek_mahasiswa = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_nim='$nim' AND mahasiswa_password!=''");
+  $cek_mahasiswa = mysqli_query($koneksi,"SELECT * FROM mahasiswa WHERE mahasiswa_nim='$nim' AND mahasiswa_password!='' AND mahasiswa_nama!='' AND mahasiswa_fakultas!=''");
   if(mysqli_num_rows($cek_mahasiswa) > 0){
     // sudah pernah mendaftar
     header("location:daftar.php?alert=sudahdaftar");

@@ -94,6 +94,22 @@
     format: 'dd/mm/yyyy',
   });
 
+  $(document).ready(function(){
+    $("#pesan_pilih_tujuan").on("change",function(){
+      var pilih = $(this).val();
+      var data = "tujuan="+pilih;
+      if(pilih.length > 0){
+        $.ajax({
+          url: "pesan_ajax_pilih_tujuan.php",
+          method: "POST", 
+          data:data,
+          success: function(result){
+            $(".tampil_tujuan").html(result);
+          }});
+      }
+
+    });
+  });
 
 </script>
 
