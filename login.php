@@ -25,7 +25,6 @@
     <center>
       <h2>SISTEM INFORMASI</h2>
       <h3>MANAJEMEN BEASISWA BIDIKMISI</h3>
-      <h4>Universitas Sebelas Maret, Solo</h4>
       <br/>
       <?php 
       if(isset($_GET['alert'])){
