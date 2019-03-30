@@ -111,7 +111,7 @@
               $ad = mysqli_query($koneksi,"SELECT * FROM pembina WHERE pembina_id='$x'");
               $aa = mysqli_fetch_assoc($ad);
               ?>
-              <span class="hidden-xs">NAMA : <?php echo $aa['pengurus_nama']; ?> | PEMBINA</span>
+              <span class="hidden-xs">NAMA : <?php echo $aa['pembina_nama']; ?> | PEMBINA</span>
             </a>
           </li>
             <?php

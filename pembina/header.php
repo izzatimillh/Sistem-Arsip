@@ -75,7 +75,9 @@
                 <span class="hidden-xs"><?php echo $_SESSION['nama']; ?> | <?php echo $aa['pembina_nama']; ?></span>
               </a>
             </li>
-            <!-- Control Sidebar Toggle Button -->
+             <li class="dropdown user user-menu active">
+              <a href="../index.php">HALAMAN UTAMA</a>
+            </li>
             <li>
               <a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a>
             </li>
