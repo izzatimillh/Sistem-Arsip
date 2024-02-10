@@ -1,99 +1,133 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistem Informasi Manajemen Beasiswa Bidikmisi</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="assets/plugins/iCheck/square/blue.css">
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login Admin | Sistem Informasi Arsip Digital</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="assets/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="assets/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="assets/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="assets/css/form/all-type-forms.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="gambar/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="gambar/favicon.ico">
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body class="hold-transition bg-primary">
-  <div class="login-box">
 
-    <center>
-      <h2>SISTEM INFORMASI</h2>
-      <h3>MANAJEMEN BEASISWA BIDIKMISI</h3>
-      <br/>
-      <?php 
-      if(isset($_GET['alert'])){
-        if($_GET['alert'] == "gagal"){
-          echo "<div class='alert alert-danger'>Login gagal! username dan password salah!</div>";
-        }else if($_GET['alert'] == "logout"){
-          echo "<div class='alert alert-success'>Anda telah berhasil logout</div>";
-        }else if($_GET['alert'] == "belum_login"){
-          echo "<div class='alert alert-warning'>Anda harus login untuk mengakses halaman admin</div>";
-        }
-      }
-      ?>
+<body>
+    <div class="error-pagewrap">
+        <div class="error-page-int">
+            <div class="text-center m-b-md custom-login">
+                <h3>ARSIP DIGITAL</h3>
+                <h4>SMK NEGERI 1 MUARA ENIM</h4>
 
-    </center>
+                <br>
 
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-      <p class="login-box-msg">LOGIN PENGURUS / PEMBINA</p>
+                <p>Silahkan login untuk mengakses arsip.</p>
 
-      <form action="cek_login.php" method="POST">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="Username" name="username" required="required" autocomplete="off">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" name="password" required="required" autocomplete="off">
-          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <select name="sebagai" required="required" class="form-control">
-            <option value="">Login Sebagai ?</option>
-            <option value="pengurus">Pengurus (admin)</option>
-            <option value="pembina">Pembina</option>
-          </select>
-        </div>
-        <div class="row">
-          <div class="col-xs-8">
-            <a href="index.php">Kembali</a>
-          </div>
-          <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-      <?php 
+            </div>
+            <div class="content-error">
+                <?php 
+                // pesan notifikasi
 
-      ?>
+                if(isset($_GET['alert'])){
+                    if($_GET['alert'] == "gagal"){
+                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                    }else if($_GET['alert'] == "logout"){
+                        echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
+                    }else if($_GET['alert'] == "belum_login"){
+                        echo "<div class='alert alert-warning'>ANDA HARUS LOGIN UNTUK MENGAKSES DASHBOARD</div>";
+                    }
+                }
+                ?>
+                <div class="hpanel">
+                    <div class="panel-body">
 
+
+                        <br>
+                        <br>
+                        <center>
+                            <h4>LOGIN ADMIN / PENGURUS</h4>    
+                        </center>
+                        <br>
+                        <br>
+
+                        <form action="periksa_login.php" method="POST" id="loginForm">
+                            <div class="form-group">
+                                <label class="control-label" for="username">Username</label>
+                                <input type="text" placeholder="username" title="Please enter you username" required="required" autocomplete="off" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Hak Akses</label>
+                                <select class="form-control" name="akses">
+                                    <option value="admin">Admin</option>
+                                    <option value="petugas">Petugas</option>
+                                </select>
+                                
+                            </div>
+                            
+                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Login">
+                        </form>
+
+                        <br>
+
+                    </div>
+                </div>
+
+                <a href="index.php">Kembali</a>
+            </div>
+            <div class="text-center login-footer">
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. TIM 1 P2M.</p>
+            </div>
+        </div>   
     </div>
-    <!-- /.login-box-body -->
-  </div>
-  <!-- /.login-box -->
-
-  <!-- jQuery 3 -->
-  <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- iCheck -->
-  <script src="assets/plugins/iCheck/icheck.min.js"></script>
-  <script>
-    $(function () {
-      $('input').iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass: 'iradio_square-blue',
-        increaseArea: '20%' /* optional */
-      });
-    });
-  </script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery-price-slider.js"></script>
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/jquery.scrollUp.min.js"></script>
+    <script src="assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="assets/js/metisMenu/metisMenu.min.js"></script>
+    <script src="assets/js/metisMenu/metisMenu-active.js"></script>
+    <script src="assets/js/tab.js"></script>
+    <script src="assets/js/icheck/icheck.min.js"></script>
+    <script src="assets/js/icheck/icheck-active.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

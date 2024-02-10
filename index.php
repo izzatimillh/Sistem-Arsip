@@ -1,117 +1,160 @@
-<?php include 'header.php'; ?>
+    <!doctype html>
+    <html class="no-js" lang="en">
 
-<div class="pnl">
-  <div class="container">
-    <div class="col-sm-2 col-md-2 col-lg-2"><img class="pull-left" style="width: 150px" src="gambar/frontend/bidikmisi.png"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
-      <center>
-        <h2>Sistem Informasi Manajemen Beasiswa Bidik Misi</h2>
-      </center>
-    </div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><img class="pull-right" style="width: 65px" src="gambar/frontend/ristekdikti.png"></div>
-  </div>
-</div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Arsip SMK Negeri 1 Muara Enim</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="gambar/favicon.ico">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="gambar/favicon.ico">
+    </head>
 
-<br/>
-<br/>
+    <body>
 
-<div class="row">
-  <div class="container">
-    <div class="page-header">
-      <h3>Informasi <small>Informasi seputar manajemen beasiswa bidik misi</small></h3>
-    </div>
+        <style type="text/css">
 
-    <div class="row">
-      <?php 
-      $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
-      while($k = mysqli_fetch_array($kategori)){
-        ?>
-        <div class="col-md-3">
-          <ul class="list-group">
-            <li class="list-group-item"><b><?php echo $k['kategori_nama']; ?></b></li>
-            <?php 
-            $id_k = $k['kategori_id'];
-            $artikel = mysqli_query($koneksi,"SELECT * FROM artikel WHERE artikel_kategori='$id_k' ORDER BY artikel_id DESC LIMIT 5");
-            while($a=mysqli_fetch_array($artikel)){
-              ?>
-              <li class="list-group-item"><a class="text-black" href="single.php?id=<?php echo $a['artikel_id']; ?>"><?php echo $a['artikel_judul']; ?></a></li>
-              <?php 
+            .navbar-siad{
+                background: #FFD700;
+                border-radius: 0px;
+                border: 1px solid #FFD700;
+                margin: 0px;
+                padding: 20px 0px;
             }
-            ?>
-          </ul>
+
+            .navbar-inverse .navbar-brand {
+                font-size: 15pt;
+                color: #fff;
+
+            }
+
+            .navbar-inverse .navbar-nav > li > a {
+
+                color: #fff;
+
+            }
+            .navbar-siad > li > a {
+
+                color: #9d9d9d !important;
+
+            }
+
+            .banner{
+                background: #FFD700;
+                border-radius: 0px;
+                border: 1px solid #FFD700;
+                padding: 60px 0px;
+            }
+
+            .banner{
+                color: white;
+            }
+
+            .banner a{
+                padding: 15px 25px;
+                color: white;
+                border: 1px solid white;
+                -webkit-transition: all 0.5s; 
+                transition: all 0.5s;
+                margin-right: 10px;
+            }
+
+            .banner a:hover{
+                text-decoration: none;
+                border: 1px dashed white;
+            }
+
+            .banner p{
+                font-size: 15pt;
+            }
+        </style>
+
+
+
+        <nav class="navbar navbar-inverse navbar-siad">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="col-lg-5">
+
+                        <img src="gambar/depan/logo_smk.png" alt="Image" height="80" width="80">
+                        
+                    </div>
+                    <a class="navbar-brand" href="#">Arsip Digital SMK Negeri 1 Muara Enim</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- <ul class="nav navbar-nav">
+                        <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+
+                   
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="banner">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div style="margin-top: 140px;">
+                            <h1>Sistem Informasi Arsip Digital</h1>
+                            <p>SMK NEGERI 1 MUARA ENIM</p>
+
+                            <br>
+                            <br>
+
+                            <a href="user_login.php">LOGIN USER</a>
+                            <a href="login.php">LOGIN ADMIN / PETUGAS</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                        <img src="gambar/depan/43.png">
+                        
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <?php 
-      }
-      ?>
-
-    </div>
-  </div>
-</div>
-
-<br/>
-<br/>
-<br/>
 
 
-<center>
-  <a target="_blank" href="https://bidikmisi.belmawa.ristekdikti.go.id/" class="btn btn-danger">MENDAFTAR BIDIKMISI DI RISTEK DIKTI</a>
-  <a href="daftar.php" class="btn btn-primary">MENDAFTAR DI SIMABID</a>
-</center>
-
-<br/>
-<br/>
-
-<div class="row">
-  <div class="container">
-    <div class="page-header">
-      <h3>Q & A <small>Tanya jawab seputar Bidik Misi</small></h3>
-    </div>
-
-    <?php 
-    $qa = mysqli_query($koneksi,"SELECT * FROM qa WHERE qa_status='publish'");
-    while($q = mysqli_fetch_array($qa)){
-      ?>
-      <div class="panel panel-success">
-        <div class="panel-heading text-bold">
-          <?php echo $q['qa_pertanyaan']; ?>
-        </div>
-        <div class="panel-body">
-          <?php echo $q['qa_jawaban']; ?>
-        </div>
-      </div>
-      <?php 
-    }
-    ?>
-
-    <br/>
-
-    <div class="page-header" id="pertanyaan">
-      <h4>Bertanya <small>Bertanya seputer Bidik Misi</small></h4>
-    </div>
-    
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-
-        <?php 
-        if(isset($_GET['alert'])){
-          if($_GET['alert'] == "pertanyaan"){
-            echo "<div class='alert alert-success text-center'>Pertanyaan anda telah tersimpan, silahkan menunggu jawaban dari admin dalam fitur Q & A ini.</div>";
-          }
-        }
-        ?>
-
-        <form action="pertanyaan_act.php" method="POST">
-          <div class="form-group">
-            <label>Pertanyaan</label>
-            <textarea class="form-control" name="pertanyaan" required="required"></textarea>
-          </div>
-          <input type="submit" class="btn btn-block btn-warning" value="Kirim Pertanyaan">
-        </form>
-      </div>
-    </div>
 
 
-  </div>
-</div>
 
-<?php include 'footer.php'; ?>
+        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+    </body>
+
+    </html>
